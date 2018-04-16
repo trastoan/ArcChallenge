@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Helvetica.ttc">
+            <string>Helvetica-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MovieDetailsHeaderTableCell" customModule="ArcMovies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="326"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hso-o2-MHe">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="258"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="m9B-tc-HUy"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOr-Ad-fxi">
+                    <rect key="frame" x="16" y="177" width="104" height="149"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nhs-5Z-H6D">
+                    <rect key="frame" x="16" y="177" width="104" height="149"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="149" id="Fwb-NB-ai8"/>
+                        <constraint firstAttribute="width" constant="104" id="u7T-Uq-4Kl"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JwI-Fn-qf8">
+                    <rect key="frame" x="128" y="266" width="239" height="16.5"/>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                    <color key="textColor" red="0.2666666667" green="0.42352941179999998" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Hso-o2-MHe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="2J3-wP-7fu"/>
+                <constraint firstItem="tOr-Ad-fxi" firstAttribute="height" secondItem="Nhs-5Z-H6D" secondAttribute="height" id="49Y-p5-d6Y"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="JwI-Fn-qf8" secondAttribute="bottom" constant="8" id="87Q-eo-kNw"/>
+                <constraint firstItem="JwI-Fn-qf8" firstAttribute="leading" secondItem="Nhs-5Z-H6D" secondAttribute="trailing" constant="8" id="CiR-lB-Bat"/>
+                <constraint firstItem="JwI-Fn-qf8" firstAttribute="top" secondItem="Hso-o2-MHe" secondAttribute="bottom" constant="8" id="EPt-sf-jm1"/>
+                <constraint firstItem="tOr-Ad-fxi" firstAttribute="centerY" secondItem="Nhs-5Z-H6D" secondAttribute="centerY" id="LtT-h7-0qO"/>
+                <constraint firstItem="tOr-Ad-fxi" firstAttribute="centerX" secondItem="Nhs-5Z-H6D" secondAttribute="centerX" id="Q5C-2E-2SV"/>
+                <constraint firstItem="Hso-o2-MHe" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Zld-hL-DKq"/>
+                <constraint firstItem="Nhs-5Z-H6D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="eSh-O3-lxZ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hso-o2-MHe" secondAttribute="bottom" constant="68" id="l1t-cq-jrg"/>
+                <constraint firstItem="Nhs-5Z-H6D" firstAttribute="top" secondItem="Hso-o2-MHe" secondAttribute="bottom" constant="-81" id="mjC-cM-0zg"/>
+                <constraint firstItem="Hso-o2-MHe" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="rnM-Rf-fSP"/>
+                <constraint firstItem="tOr-Ad-fxi" firstAttribute="width" secondItem="Nhs-5Z-H6D" secondAttribute="width" id="wf6-a1-2Yy"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="JwI-Fn-qf8" secondAttribute="trailing" constant="8" id="wzN-CQ-imZ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="backdropImageView" destination="Hso-o2-MHe" id="2ao-aK-IWz"/>
+                <outlet property="genresLabel" destination="JwI-Fn-qf8" id="xyc-DJ-V8B"/>
+                <outlet property="posterImageView" destination="Nhs-5Z-H6D" id="YDi-p0-xht"/>
+                <outlet property="shadowView" destination="tOr-Ad-fxi" id="k2b-Uu-BrV"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="-124"/>
+        </view>
+    </objects>
+</document>
