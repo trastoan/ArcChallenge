@@ -11,16 +11,19 @@ import Nuke
 
 extension UIImageView {
     func loadImage(withURL url: URL?, defaultImage: UIImage = #imageLiteral(resourceName: "NoPoster")) {
+
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.setupOn(view: self)
         activityIndicator.startAnimating()
         Nuke.cancelRequest(for: self)
         self.image = nil
+
         guard let imageURL = url else {
             activityIndicator.stopAnimating()
             self.image = defaultImage
             return
         }
+
         Nuke.loadImage(with: imageURL, into: self) { result in
             activityIndicator.stopAnimating()
             switch result {
@@ -38,11 +41,13 @@ extension UIImageView {
         activityIndicator.startAnimating()
         Nuke.cancelRequest(for: self)
         self.image = nil
+
         guard let imageURL = url else {
             activityIndicator.stopAnimating()
             self.image = defaultImage
             return
         }
+
         Nuke.loadImage(with: imageURL, into: self) { result in
             activityIndicator.stopAnimating()
             switch result {
@@ -57,16 +62,19 @@ extension UIImageView {
     }
     
     func loadImageInTableCell(withURL url: URL?, table: UITableView, indexPath: IndexPath, cell: UITableViewCell, defaultImage: UIImage = #imageLiteral(resourceName: "NoPoster")) {
+
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.setupOn(view: self)
         activityIndicator.startAnimating()
         Nuke.cancelRequest(for: self)
+
         self.image = nil
         guard let imageURL = url else {
             activityIndicator.stopAnimating()
             self.image = defaultImage
             return
         }
+
         Nuke.loadImage(with: imageURL, into: self) { result in
             activityIndicator.stopAnimating()
             switch result {

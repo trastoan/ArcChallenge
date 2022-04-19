@@ -20,5 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        RootRouter.presentTabBarController(in: window!)
+    }
 }
 

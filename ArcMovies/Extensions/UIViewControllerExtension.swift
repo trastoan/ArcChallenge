@@ -9,9 +9,9 @@ import UIKit
 
 extension UIViewController {
     //Sets iOS 11 Navigation Bar
-    func preferLargeTitles() {
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .always
+    func preferLargeTitles(isOn: Bool = true) {
+        self.navigationController?.navigationBar.prefersLargeTitles = isOn
+        self.navigationItem.largeTitleDisplayMode = isOn ? .always : .never
         self.navigationController?.navigationBar.largeTitleTextAttributes = self.navigationController?.navigationBar.titleTextAttributes
     }
 }

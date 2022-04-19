@@ -34,4 +34,8 @@ class UpcomingMoviesPresenter: UpcomingPresenter, UpcomingInteractorOutput {
     func showDetailsForMovie(movie: Movie) {
         router.presentDetailsForMovie(movie: movie)
     }
+
+    func showConfigurations() {
+        router.presentConfigurations()
+    }
 }

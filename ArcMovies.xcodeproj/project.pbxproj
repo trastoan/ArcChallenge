@@ -62,8 +62,14 @@
 		DA8E4B0A2011738D00A81E67 /* TMDBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E4B092011738D00A81E67 /* TMDBProvider.swift */; };
 		DA8E4B0C201173A200A81E67 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E4B0B201173A200A81E67 /* Movie.swift */; };
 		DA8E4B0E201188DC00A81E67 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E4B0D201188DC00A81E67 /* DateFormatterExtension.swift */; };
+		DAA9E929280F46A7007A4292 /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9E928280F46A7007A4292 /* PinInputView.swift */; };
 		DAEB350E280EEE2D00D369AE /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = DAEB350D280EEE2D00D369AE /* Nuke */; };
 		DAEB3510280EFEEF00D369AE /* NavigationController+Appearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB350F280EFEEF00D369AE /* NavigationController+Appearence.swift */; };
+		DAEB3517280F259200D369AE /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB3516280F259200D369AE /* SettingsRouter.swift */; };
+		DAEB351B280F260200D369AE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB351A280F260200D369AE /* SettingsView.swift */; };
+		DAEB351E280F321C00D369AE /* GuardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB351D280F321C00D369AE /* GuardRouter.swift */; };
+		DAEB3520280F324300D369AE /* GuardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB351F280F324300D369AE /* GuardViewController.swift */; };
+		DAEB3523280F336400D369AE /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB3522280F336400D369AE /* AuthenticationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,7 +142,13 @@
 		DA8E4B092011738D00A81E67 /* TMDBProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBProvider.swift; sourceTree = "<group>"; };
 		DA8E4B0B201173A200A81E67 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DA8E4B0D201188DC00A81E67 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
+		DAA9E928280F46A7007A4292 /* PinInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinInputView.swift; sourceTree = "<group>"; };
 		DAEB350F280EFEEF00D369AE /* NavigationController+Appearence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Appearence.swift"; sourceTree = "<group>"; };
+		DAEB3516280F259200D369AE /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		DAEB351A280F260200D369AE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DAEB351D280F321C00D369AE /* GuardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardRouter.swift; sourceTree = "<group>"; };
+		DAEB351F280F324300D369AE /* GuardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardViewController.swift; sourceTree = "<group>"; };
+		DAEB3522280F336400D369AE /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +377,7 @@
 		DA8E4AE12011715E00A81E67 /* ArcMovies */ = {
 			isa = PBXGroup;
 			children = (
+				DAEB3521280F332C00D369AE /* Services */,
 				DA8E4B072011734C00A81E67 /* Model */,
 				DA8E4B062011733C00A81E67 /* Extensions */,
 				DA8E4B052011733400A81E67 /* Modules */,
@@ -419,6 +432,8 @@
 		DA8E4B052011733400A81E67 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DAEB351C280F320800D369AE /* GuardScreen */,
+				DAEB3511280F255300D369AE /* Settings */,
 				DA4206052016B98000DD7487 /* MovieSearch */,
 				DA4205E020156A5100DD7487 /* MovieDetails */,
 				DA60631B201433C500DC2254 /* Root */,
@@ -470,6 +485,65 @@
 				DA6062FE2013FFEA00DC2254 /* View */,
 			);
 			path = UpcomingMovies;
+			sourceTree = "<group>";
+		};
+		DAEB3511280F255300D369AE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DAEB3515280F258300D369AE /* Interactor */,
+				DAEB3514280F257500D369AE /* Presenter */,
+				DAEB3513280F257000D369AE /* View */,
+				DAEB3512280F256B00D369AE /* Router */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DAEB3512280F256B00D369AE /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				DAEB3516280F259200D369AE /* SettingsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		DAEB3513280F257000D369AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DAEB351A280F260200D369AE /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DAEB3514280F257500D369AE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		DAEB3515280F258300D369AE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		DAEB351C280F320800D369AE /* GuardScreen */ = {
+			isa = PBXGroup;
+			children = (
+				DAEB351D280F321C00D369AE /* GuardRouter.swift */,
+				DAEB351F280F324300D369AE /* GuardViewController.swift */,
+				DAA9E928280F46A7007A4292 /* PinInputView.swift */,
+			);
+			path = GuardScreen;
+			sourceTree = "<group>";
+		};
+		DAEB3521280F332C00D369AE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DAEB3522280F336400D369AE /* AuthenticationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -600,6 +674,7 @@
 				DA8E4AE32011715E00A81E67 /* AppDelegate.swift in Sources */,
 				DA60632520144B1100DC2254 /* UIVIewExtension.swift in Sources */,
 				DA4206042015A41800DD7487 /* Cache.swift in Sources */,
+				DAEB351B280F260200D369AE /* SettingsView.swift in Sources */,
 				DA4205F4201579D900DD7487 /* MovieDetailsHeaderTableCell.swift in Sources */,
 				DA60630A2014008000DC2254 /* UpcomingMoviesContract.swift in Sources */,
 				DA42060F2016BC3600DD7487 /* MovieSearchViewController.swift in Sources */,
@@ -613,10 +688,15 @@
 				DA6063142014062600DC2254 /* ViewProtocols.swift in Sources */,
 				DA60630E2014056400DC2254 /* CollectionViewExtension.swift in Sources */,
 				DA4205FC20157C4D00DD7487 /* TableViewExtension.swift in Sources */,
+				DAEB3517280F259200D369AE /* SettingsRouter.swift in Sources */,
 				DA8E4B0E201188DC00A81E67 /* DateFormatterExtension.swift in Sources */,
 				DA4205F6201579F500DD7487 /* MovieDetailsOverviewTableCell.swift in Sources */,
+				DAEB3523280F336400D369AE /* AuthenticationService.swift in Sources */,
+				DAEB3520280F324300D369AE /* GuardViewController.swift in Sources */,
 				DA4206022015974200DD7487 /* UIColorExtension.swift in Sources */,
+				DAEB351E280F321C00D369AE /* GuardRouter.swift in Sources */,
 				DA42060020157D2E00DD7487 /* MovieDetailsRouter.swift in Sources */,
+				DAA9E929280F46A7007A4292 /* PinInputView.swift in Sources */,
 				DA6062FD2013FFCC00DC2254 /* UpcomingMoviesViewController.swift in Sources */,
 				DA606316201406AC00DC2254 /* NibLoadableViewExtension.swift in Sources */,
 				DA60631820140B3C00DC2254 /* UIImageExtension.swift in Sources */,
@@ -719,7 +799,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -773,7 +853,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -789,7 +869,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 489VWS49NR;
 				INFOPLIST_FILE = ArcMovies/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -808,7 +888,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 489VWS49NR;
 				INFOPLIST_FILE = ArcMovies/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

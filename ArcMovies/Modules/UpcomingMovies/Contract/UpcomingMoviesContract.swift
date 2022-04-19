@@ -18,6 +18,7 @@ protocol UpcomingInterface: AnyObject {
 protocol UpcomingPresenter: AnyObject {
     func updateView(page: Int)
     func showDetailsForMovie(movie: Movie)
+    func showConfigurations()
 }
 
 //Interactor Output Contractor
@@ -38,5 +39,6 @@ protocol UpcomingWireframe: AnyObject {
     var viewController: UIViewController? { get set }
     
     func presentDetailsForMovie(movie: Movie)
+    func presentConfigurations()
     static func assembleModule() -> UIViewController
 }

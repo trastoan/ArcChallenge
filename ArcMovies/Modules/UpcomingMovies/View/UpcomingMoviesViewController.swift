@@ -27,6 +27,7 @@ class UpcomingMoviesViewController: UIViewController, UpcomingInterface {
         super.viewDidLoad()
         collection = CollectionCreator.createCollection(onView: self.view)
         setupView()
+        setupConfigurationsButton()
         presenter.updateView(page: currentPage)
     }
     
@@ -41,6 +42,14 @@ class UpcomingMoviesViewController: UIViewController, UpcomingInterface {
         }
         self.navigationItem.title = "Upcoming Movies"
         self.preferLargeTitles()
+    }
+
+    func setupConfigurationsButton() {
+        let barButton = UIBarButtonItem(title: nil,
+                                        image: UIImage(systemName: "gear"),
+                                        primaryAction: UIAction(handler: { _ in self.presenter.showConfigurations() }))
+
+        navigationItem.setRightBarButton(barButton, animated: false)
     }
     
     func showMoviesData(movies: [Movie]) {
@@ -97,17 +106,23 @@ extension UpcomingMoviesViewController: UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
         var size: CGSize
-        //Iphone plus width sizes are 414
-        let maximumWidth: CGFloat = 420
-        if collectionView.bounds.width < maximumWidth {
-            let width = (collectionView.bounds.width/2)
-            let height = width * 1.75
-            size = CGSize(width: width, height: height)
+
+        let width = UIScreen.main.bounds.width
+
+        let navBarHeight = self.navigationController?.navigationBar.frame.height ?? 0
+        let tabBarHeight = self.tabBarController?.tabBar.frame.height ?? 0
+        let height = UIScreen.main.bounds.height - (navBarHeight + tabBarHeight)
+
+        if width < height {
+            let cellWidth = width/2
+            let cellHeight = cellWidth * 1.75
+            size = CGSize(width: cellWidth, height: cellHeight)
         } else {
-            let height = collectionView.bounds.height
-            let width = height * 0.58
-            size = CGSize(width: width, height: height)
+            let cellHeight = height
+            let cellWidth = cellHeight * 0.58
+            size = CGSize(width: cellWidth, height: cellHeight)
         }
         return size
     }

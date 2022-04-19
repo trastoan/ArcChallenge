@@ -37,4 +37,9 @@ class UpcomingMoviesRouter: UpcomingWireframe {
         let destination = MovieDetailsRouter.assembleModule(with: movie)
         viewController?.navigationController?.pushViewController(destination, animated: true)
     }
+
+    func presentConfigurations() {
+        let destination = SettingsRouter.assembleModule()
+        viewController?.navigationController?.pushViewController(destination, animated: true)
+    }
 }

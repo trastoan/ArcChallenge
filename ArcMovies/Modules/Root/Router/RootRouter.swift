@@ -7,10 +7,26 @@
 //
 
 import UIKit
+import SwiftUI
 
 class RootRouter: RootWireframe {
     static func presentTabBarController(in window: UIWindow) {
         window.makeKeyAndVisible()
-        window.rootViewController = ApplicationTabBarController()
+        window.rootViewController = defineRootController()
+    }
+
+    static func presentTabBarController() {
+        DispatchQueue.main.async {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let window = appDelegate.window else {
+                return
+            }
+            window.makeKeyAndVisible()
+            window.rootViewController = ApplicationTabBarController()
+        }
+    }
+
+    private static func defineRootController() -> UIViewController {
+        let isSecurityOn = UserDefaults.standard.bool(forKey: "authenticationEnabled")
+        return isSecurityOn ? GuardRouter.assembleModule() : ApplicationTabBarController()
     }
 }
