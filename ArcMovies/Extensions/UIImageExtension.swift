@@ -22,6 +22,7 @@ extension UIImageView {
             return
         }
         Nuke.loadImage(with: imageURL, into: self) { result in
+            activityIndicator.stopAnimating()
             switch result {
                 case .success(let response):
                     self.image = response.image
@@ -43,6 +44,7 @@ extension UIImageView {
             return
         }
         Nuke.loadImage(with: imageURL, into: self) { result in
+            activityIndicator.stopAnimating()
             switch result {
                 case .success(let response):
                     if collection.indexPath(for: cell)?.row == indexPath.row {
