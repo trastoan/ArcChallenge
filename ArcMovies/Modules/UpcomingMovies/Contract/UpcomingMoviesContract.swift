@@ -9,33 +9,33 @@
 import UIKit
 
 //Interface contract
-protocol UpcomingInterface: class {
+protocol UpcomingInterface: AnyObject {
     func showMoviesData(movies: [Movie])
     func nothingToFetch()
 }
 
 //Presenter contract
-protocol UpcomingPresenter: class {
+protocol UpcomingPresenter: AnyObject {
     func updateView(page: Int)
     func showDetailsForMovie(movie: Movie)
 }
 
 //Interactor Output Contractor
-protocol UpcomingInteractorOutput: class {
+protocol UpcomingInteractorOutput: AnyObject {
     func fetchedMovies(movies: [Movie])
     func fetchMovieFailed()
 }
 
 //Interactor Input Contract
-protocol UpcomingInteractorInput: class {
-    weak var output: UpcomingInteractorOutput! { get set }
+protocol UpcomingInteractorInput: AnyObject {
+    var output: UpcomingInteractorOutput! { get set }
     
     func fetchMovie(page: Int)
 }
 
 //Wireframe Contract
-protocol UpcomingWireframe: class {
-    weak var viewController: UIViewController? { get set }
+protocol UpcomingWireframe: AnyObject {
+    var viewController: UIViewController? { get set }
     
     func presentDetailsForMovie(movie: Movie)
     static func assembleModule() -> UIViewController

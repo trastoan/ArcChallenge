@@ -8,29 +8,29 @@
 
 import UIKit
 
-protocol SearchInterface: class {
+protocol SearchInterface: AnyObject {
     var presenter: SearchPresenter! { get set }
     func showMoviesData(movies: [Movie])
     func nothingToFetch()
 }
 
-protocol SearchPresenter: class {
+protocol SearchPresenter: AnyObject {
     func searchMovie(with name: String)
     func showDetailsForMovie(movie: Movie)
 }
 
-protocol SearchInteractorOutput: class {
+protocol SearchInteractorOutput: AnyObject {
     func searchedMovies(movies: [Movie])
     func searchFailed()
 }
 
 protocol SearchInteractorInput {
-    weak var output: SearchInteractorOutput! { get set }
+    var output: SearchInteractorOutput! { get set }
     func searchMovie(with name: String)
 }
 
 protocol SearchWireframe {
-    weak var viewController: UIViewController? { get set }
+    var viewController: UIViewController? { get set }
     
     func presentDetailsForMovie(movie: Movie)
     static func assembleModule() -> UIViewController

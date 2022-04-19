@@ -8,6 +8,6 @@
 
 import UIKit
 
-protocol RootWireframe: class {
+protocol RootWireframe: AnyObject {
     static func presentTabBarController(in window: UIWindow)
 }

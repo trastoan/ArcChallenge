@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CE876E8571CA00B95A17DE0 /* Pods_ArcMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F863353618DC251796B914 /* Pods_ArcMovies.framework */; };
-		A7DB871278771847EEB58C2C /* Pods_ArcMoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37685EB8CF5FF6AABAFF6F08 /* Pods_ArcMoviesTests.framework */; };
 		DA2FC85D2016E7B900CA9D78 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FC85C2016E7B900CA9D78 /* ArrayExtension.swift */; };
 		DA2FC85F2016EBE700CA9D78 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FC85E2016EBE700CA9D78 /* UIAlertExtension.swift */; };
 		DA2FC8612017A78600CA9D78 /* TMDBProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FC8602017A78600CA9D78 /* TMDBProviderTest.swift */; };
@@ -65,6 +63,7 @@
 		DA8E4B0A2011738D00A81E67 /* TMDBProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E4B092011738D00A81E67 /* TMDBProvider.swift */; };
 		DA8E4B0C201173A200A81E67 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E4B0B201173A200A81E67 /* Movie.swift */; };
 		DA8E4B0E201188DC00A81E67 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E4B0D201188DC00A81E67 /* DateFormatterExtension.swift */; };
+		DAEB350E280EEE2D00D369AE /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = DAEB350D280EEE2D00D369AE /* Nuke */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,11 +77,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15F863353618DC251796B914 /* Pods_ArcMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArcMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2079CE220BF61CF51FD5A5B7 /* Pods-ArcMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArcMovies.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArcMovies/Pods-ArcMovies.release.xcconfig"; sourceTree = "<group>"; };
-		37685EB8CF5FF6AABAFF6F08 /* Pods_ArcMoviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArcMoviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		53332BFBD0DF883F78FB7781 /* Pods-ArcMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArcMovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArcMovies/Pods-ArcMovies.debug.xcconfig"; sourceTree = "<group>"; };
-		897FE6390A8335B5F5458BFC /* Pods-ArcMoviesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArcMoviesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArcMoviesTests/Pods-ArcMoviesTests.release.xcconfig"; sourceTree = "<group>"; };
 		DA2FC85C2016E7B900CA9D78 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		DA2FC85E2016EBE700CA9D78 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 		DA2FC8602017A78600CA9D78 /* TMDBProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBProviderTest.swift; sourceTree = "<group>"; };
@@ -143,7 +137,6 @@
 		DA8E4B092011738D00A81E67 /* TMDBProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBProvider.swift; sourceTree = "<group>"; };
 		DA8E4B0B201173A200A81E67 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DA8E4B0D201188DC00A81E67 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
-		FB09B1813DFF0904D538B0A6 /* Pods-ArcMoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArcMoviesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArcMoviesTests/Pods-ArcMoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CE876E8571CA00B95A17DE0 /* Pods_ArcMovies.framework in Frameworks */,
+				DAEB350E280EEE2D00D369AE /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,24 +152,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7DB871278771847EEB58C2C /* Pods_ArcMoviesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		54AC01E09EAECD9AE20861B4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				53332BFBD0DF883F78FB7781 /* Pods-ArcMovies.debug.xcconfig */,
-				2079CE220BF61CF51FD5A5B7 /* Pods-ArcMovies.release.xcconfig */,
-				FB09B1813DFF0904D538B0A6 /* Pods-ArcMoviesTests.debug.xcconfig */,
-				897FE6390A8335B5F5458BFC /* Pods-ArcMoviesTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		DA4205E020156A5100DD7487 /* MovieDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,8 +350,6 @@
 				DA8E4AE12011715E00A81E67 /* ArcMovies */,
 				DA8E4AF62011715E00A81E67 /* ArcMoviesTests */,
 				DA8E4AE02011715E00A81E67 /* Products */,
-				54AC01E09EAECD9AE20861B4 /* Pods */,
-				F01844E275D676C7F7374B67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -493,15 +472,6 @@
 			path = UpcomingMovies;
 			sourceTree = "<group>";
 		};
-		F01844E275D676C7F7374B67 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				15F863353618DC251796B914 /* Pods_ArcMovies.framework */,
-				37685EB8CF5FF6AABAFF6F08 /* Pods_ArcMoviesTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -509,18 +479,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA8E4AFC2011715E00A81E67 /* Build configuration list for PBXNativeTarget "ArcMovies" */;
 			buildPhases = (
-				C65B52CB2344A4542241A897 /* [CP] Check Pods Manifest.lock */,
 				DA8E4ADB2011715E00A81E67 /* Sources */,
 				DA8E4ADC2011715E00A81E67 /* Frameworks */,
 				DA8E4ADD2011715E00A81E67 /* Resources */,
-				892BDE0D7E629E4E15E4A53D /* [CP] Embed Pods Frameworks */,
-				56DB51FD4B2B62D334A34C19 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ArcMovies;
+			packageProductDependencies = (
+				DAEB350D280EEE2D00D369AE /* Nuke */,
+			);
 			productName = ArcMovies;
 			productReference = DA8E4ADF2011715E00A81E67 /* ArcMovies.app */;
 			productType = "com.apple.product-type.application";
@@ -529,12 +499,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA8E4AFF2011715E00A81E67 /* Build configuration list for PBXNativeTarget "ArcMoviesTests" */;
 			buildPhases = (
-				A264BE57A003C92227FB3A26 /* [CP] Check Pods Manifest.lock */,
 				DA8E4AEF2011715E00A81E67 /* Sources */,
 				DA8E4AF02011715E00A81E67 /* Frameworks */,
 				DA8E4AF12011715E00A81E67 /* Resources */,
-				B32C6A8EA757E7A604966895 /* [CP] Embed Pods Frameworks */,
-				8D900FDA83ECA6D19473A009 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -553,16 +520,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = YuriFrota;
 				TargetAttributes = {
 					DA8E4ADE2011715E00A81E67 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1330;
 						ProvisioningStyle = Automatic;
 					};
 					DA8E4AF22011715E00A81E67 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1330;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DA8E4ADE2011715E00A81E67;
 					};
@@ -577,6 +545,9 @@
 				Base,
 			);
 			mainGroup = DA8E4AD62011715E00A81E67;
+			packageReferences = (
+				DAEB350C280EEE2D00D369AE /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = DA8E4AE02011715E00A81E67 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -610,108 +581,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		56DB51FD4B2B62D334A34C19 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArcMovies/Pods-ArcMovies-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		892BDE0D7E629E4E15E4A53D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ArcMovies/Pods-ArcMovies-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArcMovies/Pods-ArcMovies-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D900FDA83ECA6D19473A009 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArcMoviesTests/Pods-ArcMoviesTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A264BE57A003C92227FB3A26 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ArcMoviesTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B32C6A8EA757E7A604966895 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArcMoviesTests/Pods-ArcMoviesTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C65B52CB2344A4542241A897 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ArcMovies-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DA8E4ADB2011715E00A81E67 /* Sources */ = {
@@ -813,6 +682,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -820,8 +690,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -847,7 +719,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -870,6 +742,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -877,8 +750,10 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -898,51 +773,55 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		DA8E4AFD2011715E00A81E67 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53332BFBD0DF883F78FB7781 /* Pods-ArcMovies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 489VWS49NR;
 				INFOPLIST_FILE = ArcMovies/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = YuriFrota.ArcMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		DA8E4AFE2011715E00A81E67 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2079CE220BF61CF51FD5A5B7 /* Pods-ArcMovies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 489VWS49NR;
 				INFOPLIST_FILE = ArcMovies/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = YuriFrota.ArcMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		DA8E4B002011715E00A81E67 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB09B1813DFF0904D538B0A6 /* Pods-ArcMoviesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -950,11 +829,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 489VWS49NR;
 				INFOPLIST_FILE = ArcMoviesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = YuriFrota.ArcMoviesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArcMovies.app/ArcMovies";
 			};
@@ -962,7 +845,6 @@
 		};
 		DA8E4B012011715E00A81E67 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 897FE6390A8335B5F5458BFC /* Pods-ArcMoviesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -970,10 +852,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 489VWS49NR;
 				INFOPLIST_FILE = ArcMoviesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = YuriFrota.ArcMoviesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ArcMovies.app/ArcMovies";
 			};
@@ -1010,6 +896,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DAEB350C280EEE2D00D369AE /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DAEB350D280EEE2D00D369AE /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DAEB350C280EEE2D00D369AE /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA8E4AD72011715E00A81E67 /* Project object */;
 }

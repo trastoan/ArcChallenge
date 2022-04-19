@@ -52,7 +52,7 @@ struct Movie: Decodable {
                 _ = genres.map{genresDict[$0.id] = $0.name}
                 let listIds = Array(genresDict.keys)
                 GenreList.checkListValidity(moviesGenre: genresIds, list: listIds)
-                let genresNames = genresIds.map{genresDict[$0]}.flatMap{$0}
+                let genresNames = genresIds.map{genresDict[$0]}.compactMap{$0}
                 completion(genresNames.reduce("") {$0 == "" ? $1 : "\($0) \($1)"})
             }
         }

@@ -8,17 +8,17 @@
 
 import UIKit
 
-protocol DetailsInterface: class {
+protocol DetailsInterface: AnyObject {
     var presenter: DetailsPresenter! { get set }
     func showDetails(for movie: Movie)
 }
 
-protocol DetailsPresenter: class {
+protocol DetailsPresenter: AnyObject {
     var detailedMovie: Movie! { get set }
-    weak var view: DetailsInterface? { get set }
+    var view: DetailsInterface? { get set }
     func updateView()
 }
 
-protocol DetailsWireframe: class {
+protocol DetailsWireframe: AnyObject {
     static func assembleModule(with movie: Movie) -> UIViewController
 }

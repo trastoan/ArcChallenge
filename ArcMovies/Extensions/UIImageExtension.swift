@@ -14,20 +14,20 @@ extension UIImageView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.setupOn(view: self)
         activityIndicator.startAnimating()
-        Manager.shared.cancelRequest(for: self)
+        Nuke.cancelRequest(for: self)
         self.image = nil
         guard let imageURL = url else {
             activityIndicator.stopAnimating()
             self.image = defaultImage
             return
         }
-        Manager.shared.loadImage(with: imageURL) { (images) in
-            activityIndicator.stopAnimating()
-            guard let image = images.value else {
-                self.image = defaultImage
-                return
+        Nuke.loadImage(with: imageURL, into: self) { result in
+            switch result {
+                case .success(let response):
+                    self.image = response.image
+                case .failure:
+                    self.image = defaultImage
             }
-            self.image = image
         }
     }
     
@@ -35,21 +35,21 @@ extension UIImageView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.setupOn(view: self)
         activityIndicator.startAnimating()
-        Manager.shared.cancelRequest(for: self)
+        Nuke.cancelRequest(for: self)
         self.image = nil
         guard let imageURL = url else {
             activityIndicator.stopAnimating()
             self.image = defaultImage
             return
         }
-        Manager.shared.loadImage(with: imageURL) { (images) in
-            activityIndicator.stopAnimating()
-            guard let image = images.value else {
-                self.image = defaultImage
-                return
-            }
-            if collection.indexPath(for: cell)?.row == indexPath.row {
-                self.image = image
+        Nuke.loadImage(with: imageURL, into: self) { result in
+            switch result {
+                case .success(let response):
+                    if collection.indexPath(for: cell)?.row == indexPath.row {
+                        self.image = response.image
+                    }
+                case .failure:
+                    self.image = defaultImage
             }
         }
     }
@@ -58,21 +58,22 @@ extension UIImageView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.setupOn(view: self)
         activityIndicator.startAnimating()
-        Manager.shared.cancelRequest(for: self)
+        Nuke.cancelRequest(for: self)
         self.image = nil
         guard let imageURL = url else {
             activityIndicator.stopAnimating()
             self.image = defaultImage
             return
         }
-        Manager.shared.loadImage(with: imageURL) { (images) in
+        Nuke.loadImage(with: imageURL, into: self) { result in
             activityIndicator.stopAnimating()
-            guard let image = images.value else {
-                self.image = defaultImage
-                return
-            }
-            if table.indexPath(for: cell)?.row == indexPath.row {
-                self.image = image
+            switch result {
+                case .success(let response):
+                    if table.indexPath(for: cell)?.row == indexPath.row {
+                        self.image = response.image
+                    }
+                case .failure:
+                    self.image = defaultImage
             }
         }
     }
