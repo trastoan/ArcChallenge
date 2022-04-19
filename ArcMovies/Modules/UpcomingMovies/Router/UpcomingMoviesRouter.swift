@@ -17,9 +17,8 @@ class UpcomingMoviesRouter: UpcomingWireframe {
         let router = UpcomingMoviesRouter()
         
         let navigation = UINavigationController(rootViewController: upcomingController)
-        navigation.navigationBar.tintColor = .white
-        navigation.navigationBar.barTintColor = UIColor.navigationColor
-        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigation.setAppearence(background: .navigationColor, tint: .white)
+
         let view = navigation.children.first as! UpcomingMoviesViewController
         
         upcomingController.presenter = presenter

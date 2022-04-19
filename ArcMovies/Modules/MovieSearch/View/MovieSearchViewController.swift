@@ -41,8 +41,9 @@ class MovieSearchViewController: UIViewController, SearchInterface {
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search for movies"
-        searchController.searchBar.tintColor = .white
-//        searchController.searchBar.changeTextFieldBackground(to: .white, cursor: UIColor.navigationColor)
+        searchController.searchBar.searchTextField.backgroundColor = .white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black
+
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
         definesPresentationContext = true

@@ -11,7 +11,7 @@ import UIKit
 extension UIActivityIndicatorView {
     func setupOn(view: UIView, xFromCenter: CGFloat = 0.0, yFromCenter: CGFloat = 0.0) {
         view.addSubview(self)
-        self.style = .gray
+        self.style = .medium
         self.color = .black
         self.translatesAutoresizingMaskIntoConstraints = false
         self.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: xFromCenter).isActive = true

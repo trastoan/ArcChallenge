@@ -22,11 +22,7 @@ class MovieSearchRouter: SearchWireframe {
         let router = MovieSearchRouter()
         
         let navigation = UINavigationController(rootViewController: searchController)
-        navigation.navigationBar.tintColor = .white
-        navigation.navigationBar.barTintColor = UIColor.navigationColor
-        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-        
-//        let view = navigation.childViewControllers.first as! MovieSearchViewController
+        navigation.setAppearence(background: .navigationColor, tint: .white)
         
         searchController.presenter = presenter
         

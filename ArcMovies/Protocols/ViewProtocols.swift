@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ReusableView: class {}
-protocol NibLoadableView: class {}
-protocol ReusableContent: class {}
+protocol ReusableView: AnyObject {}
+protocol NibLoadableView: AnyObject {}
+protocol ReusableContent: AnyObject {}
