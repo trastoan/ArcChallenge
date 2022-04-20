@@ -19,8 +19,12 @@ struct SettingsView: View {
                     .tint(Color(.navigationColor))
                 if toggleActive {
                     Button {
-                        AuthenticationService.shared.askForAuthentication { success in
-                            biometricsEnabled = success
+                        if !biometricsEnabled {
+                            AuthenticationService.shared.askForAuthentication { success in
+                                biometricsEnabled = success
+                            }
+                        } else {
+                            biometricsEnabled.toggle()
                         }
                     } label: {
                         Text("\(biometricsEnabled ? "Disable" : "Enable") Biometrics")

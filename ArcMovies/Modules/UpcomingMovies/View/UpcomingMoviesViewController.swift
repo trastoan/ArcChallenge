@@ -36,7 +36,7 @@ class UpcomingMoviesViewController: UIViewController, UpcomingInterface {
         collection.dataSource = self
 
         collection.register(MovieCollectionViewCell.self)
-        collection.backgroundColor = .white
+        collection.backgroundColor = .systemBackground
         if #available(iOS 11.0, *) {
             collection.contentInsetAdjustmentBehavior = .always
         }

@@ -39,7 +39,7 @@ class PinInputView: UIView {
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textAlignment = .center
         label.numberOfLines = 1
-        label.textColor = .white
+        label.textColor = .systemBackground
         return label
     }()
 
