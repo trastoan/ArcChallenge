@@ -9,12 +9,28 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage("authenticationEnabled") private var toggleActive = false
+    @AppStorage(UserDefaults.authenticationEnabledKey) private var toggleActive = false
+    @AppStorage(UserDefaults.biometricEnabledKey) private var biometricsEnabled = false
+    
     var body: some View {
         List {
             Section("Security") {
                 Toggle("Activate app protection", isOn: $toggleActive)
                     .tint(Color(.navigationColor))
+                if toggleActive {
+                    Button {
+                        AuthenticationService.shared.askForAuthentication { success in
+                            biometricsEnabled = success
+                        }
+                    } label: {
+                        Text("\(biometricsEnabled ? "Disable" : "Enable") Biometrics")
+                    }
+                    Button {
+                        //enter pin
+                    } label: {
+                        Text("Change passcode")
+                    }
+                }
             }
         }
     }

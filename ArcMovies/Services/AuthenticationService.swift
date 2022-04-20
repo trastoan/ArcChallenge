@@ -19,12 +19,11 @@ class AuthenticationService {
         authContext.localizedCancelTitle = "Enter Pin"
         let reason = "Unlock your app"
 
-        if authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &policyError) {
-            authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason, reply: { success, error in
+        if authContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &policyError) {
+            authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason, reply: { success, error in
                 if success {
                     completion(true)
                 } else {
-                    //enter pin input
                     completion(false)
                 }
 

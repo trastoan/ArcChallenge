@@ -9,21 +9,28 @@
 import UIKit
 
 class GuardViewController: UIViewController {
-    let pinView = PinInputView(frame: .zero)
+    static var isGuardEnabled = "authenticationEnabled"
+    static var isBiometricEnabled = "biometricsEnabled"
 
+    let pinView = PinInputView(with: "Insert your pin", pinSize: 6)
 
     override func viewDidLoad() {
         self.view.backgroundColor = .navigationColor
+        pinView.delegate = self
         setupConstraints()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        AuthenticationService.shared.askForAuthentication { success in
-//            if success {
-//                RootRouter.presentTabBarController()
-//            }
-//        }
+        if UserDefaults.biometricsEnabled {
+            AuthenticationService.shared.askForAuthentication { success in
+                if success {
+                    RootRouter.presentTabBarController()
+                }
+            }
+        } else {
+            pinView.beginUserInput()
+        }
     }
 
     private func setupConstraints() {
@@ -31,10 +38,22 @@ class GuardViewController: UIViewController {
         view.addSubview(pinView)
 
         NSLayoutConstraint.activate([
-            pinView.heightAnchor.constraint(equalToConstant: 60),
-            pinView.widthAnchor.constraint(equalToConstant: 150),
-            pinView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            pinView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 18),
+            pinView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -18),
             pinView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
         ])
+    }
+}
+
+extension GuardViewController: PinInputViewDelegate {
+    func didFinishInput(pin: String) {
+        print(pin)
+        if authenticated() {
+            RootRouter.presentTabBarController()
+        }
+    }
+
+    func authenticated() -> Bool {
+        return true
     }
 }

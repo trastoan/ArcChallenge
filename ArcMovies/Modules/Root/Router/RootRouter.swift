@@ -26,7 +26,6 @@ class RootRouter: RootWireframe {
     }
 
     private static func defineRootController() -> UIViewController {
-        let isSecurityOn = UserDefaults.standard.bool(forKey: "authenticationEnabled")
-        return isSecurityOn ? GuardRouter.assembleModule() : ApplicationTabBarController()
+        return UserDefaults.authenticationEnabled ? GuardRouter.assembleModule() : ApplicationTabBarController()
     }
 }

@@ -8,32 +8,77 @@
 
 import UIKit
 
-class PinInputView: UIView {
-    let pinViews = [UIView(), UIView(), UIView(), UIView()]
+protocol PinInputViewDelegate: AnyObject {
+    func didFinishInput(pin: String)
+}
 
-    lazy var stack: UIStackView = {
-        let stckView = UIStackView(arrangedSubviews: pinViews)
+class PinInputView: UIView {
+    private var pinViews: [UIView] = []
+
+    lazy private var pinStack: UIStackView = {
+        let stckView = UIStackView()
         stckView.translatesAutoresizingMaskIntoConstraints = false
         stckView.alignment = .center
         stckView.axis = .horizontal
-        stckView.distribution = .equalSpacing
-        stckView.spacing = 10
+        stckView.distribution = .fillEqually
+        stckView.spacing = 20
         return stckView
     }()
 
-    let hiddenTextfield: UITextField = {
+    lazy private var contentStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [messageLabel, pinStack])
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.alignment = .center
+        stack.spacing = 15
+        return stack
+    }()
+
+    private let messageLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        label.textColor = .white
+        return label
+    }()
+
+    private let hiddenTextfield: UITextField = {
         let tf = UITextField()
         tf.keyboardType = .numberPad
         tf.isHidden = true
         return tf
     }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    weak var delegate: PinInputViewDelegate?
+
+    init(with message: String, pinSize: Int) {
+        super.init(frame: .zero)
+
+        messageLabel.text = message
+        initPins(number: pinSize)
         setupConstraints()
-        hiddenTextfield.becomeFirstResponder()
-        hiddenTextfield.delegate = self
+
         hiddenTextfield.addTarget(self, action: #selector(changedText), for: .editingChanged)
+    }
+
+    func beginUserInput() {
+        hiddenTextfield.becomeFirstResponder()
+    }
+
+    private func initPins(number: Int) {
+        for _ in 0..<number {
+            let pin = UIView()
+            pinStack.addArrangedSubview(pin)
+
+            NSLayoutConstraint.activate([
+                pin.widthAnchor.constraint(greaterThanOrEqualToConstant: 10),
+                pin.widthAnchor.constraint(lessThanOrEqualToConstant: 20),
+                pin.heightAnchor.constraint(equalTo: pin.widthAnchor)
+            ])
+
+            pinViews.append(pin)
+        }
     }
 
     override func layoutSubviews() {
@@ -47,16 +92,17 @@ class PinInputView: UIView {
 
     private func setupConstraints() {
         self.addSubview(hiddenTextfield)
-        self.addSubview(stack)
+        self.addSubview(contentStack)
 
-        pinViews.forEach { pinView in
-            NSLayoutConstraint.activate([
-                pinView.heightAnchor.constraint(greaterThanOrEqualToConstant: 20),
-                pinView.widthAnchor.constraint(equalTo: pinView.heightAnchor)
-            ])
-        }
+        let stackWidth = pinStack.widthAnchor.constraint(equalTo: contentStack.widthAnchor)
+        stackWidth.priority = .defaultLow
 
-        stack.centerOnSelf(view: self)
+        NSLayoutConstraint.activate([
+            pinStack.heightAnchor.constraint(greaterThanOrEqualToConstant: 60),
+            stackWidth
+        ])
+
+        contentStack.centerOnSelf(view: self)
     }
 
     @objc
@@ -69,6 +115,10 @@ class PinInputView: UIView {
                 pinView.backgroundColor = .clear
             }
         }
+        if count == pinViews.count {
+            textfield.resignFirstResponder()
+            delegate?.didFinishInput(pin: textfield.text!)
+        }
     }
 
     private func customizePinViews() {
@@ -78,16 +128,5 @@ class PinInputView: UIView {
             pin.layer.borderWidth = 1
             pin.layer.borderColor = UIColor.white.cgColor
         }
-    }
-}
-
-extension PinInputView: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let textCount = textField.text?.count ?? 0
-        if textCount >= 4 {
-            textField.resignFirstResponder()
-            return false
-        }
-        return true
     }
 }

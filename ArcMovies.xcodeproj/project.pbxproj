@@ -63,6 +63,7 @@
 		DA8E4B0C201173A200A81E67 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E4B0B201173A200A81E67 /* Movie.swift */; };
 		DA8E4B0E201188DC00A81E67 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E4B0D201188DC00A81E67 /* DateFormatterExtension.swift */; };
 		DAA9E929280F46A7007A4292 /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9E928280F46A7007A4292 /* PinInputView.swift */; };
+		DAA9E92B28104A19007A4292 /* UserDefaults+UserConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9E92A28104A19007A4292 /* UserDefaults+UserConfiguration.swift */; };
 		DAEB350E280EEE2D00D369AE /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = DAEB350D280EEE2D00D369AE /* Nuke */; };
 		DAEB3510280EFEEF00D369AE /* NavigationController+Appearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB350F280EFEEF00D369AE /* NavigationController+Appearence.swift */; };
 		DAEB3517280F259200D369AE /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB3516280F259200D369AE /* SettingsRouter.swift */; };
@@ -143,6 +144,7 @@
 		DA8E4B0B201173A200A81E67 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DA8E4B0D201188DC00A81E67 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		DAA9E928280F46A7007A4292 /* PinInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinInputView.swift; sourceTree = "<group>"; };
+		DAA9E92A28104A19007A4292 /* UserDefaults+UserConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserConfiguration.swift"; sourceTree = "<group>"; };
 		DAEB350F280EFEEF00D369AE /* NavigationController+Appearence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Appearence.swift"; sourceTree = "<group>"; };
 		DAEB3516280F259200D369AE /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		DAEB351A280F260200D369AE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -462,6 +464,7 @@
 				DA2FC85E2016EBE700CA9D78 /* UIAlertExtension.swift */,
 				DA2FC8662017EA2900CA9D78 /* StringExtension.swift */,
 				DAEB350F280EFEEF00D369AE /* NavigationController+Appearence.swift */,
+				DAA9E92A28104A19007A4292 /* UserDefaults+UserConfiguration.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -711,6 +714,7 @@
 				DA60631F201433E700DC2254 /* RootContract.swift in Sources */,
 				DA4206152016C4EC00DD7487 /* MovieSearchRouter.swift in Sources */,
 				DA6063062014005100DC2254 /* UpcomingMoviesRouter.swift in Sources */,
+				DAA9E92B28104A19007A4292 /* UserDefaults+UserConfiguration.swift in Sources */,
 				DA2FC8672017EA2900CA9D78 /* StringExtension.swift in Sources */,
 				DA2FC85D2016E7B900CA9D78 /* ArrayExtension.swift in Sources */,
 			);
