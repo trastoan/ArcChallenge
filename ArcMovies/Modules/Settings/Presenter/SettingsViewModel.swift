@@ -14,6 +14,7 @@ class SettingsViewModel: ObservableObject {
     @Published var guardEnabled = false {
         didSet {
             UserDefaults.standard.set(guardEnabled, forKey: UserDefaults.authenticationEnabledKey)
+            if guardEnabled { registerNewPin() }
         }
     }
 
