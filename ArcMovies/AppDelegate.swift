@@ -16,12 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
-        RootRouter.presentTabBarController(in: window!)
+        RootRouter.presentEntryController(in: window!)
         return true
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        RootRouter.presentTabBarController(in: window!)
+        RootRouter.presentGuardController(in: window!)
     }
 }
 

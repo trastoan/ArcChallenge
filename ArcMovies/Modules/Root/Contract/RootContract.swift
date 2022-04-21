@@ -9,5 +9,5 @@
 import UIKit
 
 protocol RootWireframe: AnyObject {
-    static func presentTabBarController(in window: UIWindow)
+    static func presentEntryController(in window: UIWindow)
 }

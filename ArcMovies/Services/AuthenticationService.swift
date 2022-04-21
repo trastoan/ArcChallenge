@@ -12,7 +12,29 @@ class AuthenticationService {
     static var shared = AuthenticationService()
     private init() {}
 
-    func askForAuthentication(completion: @escaping (Bool) -> ()) {
+    func biometricAuthentication() async -> Bool {
+        await withCheckedContinuation({ continuation in
+            biometricAuth { success in
+                continuation.resume(returning: success)
+            }
+        })
+    }
+
+    func savePin(_ value: String) -> Bool {
+        guard let data = value.data(using: .utf8) else { return false }
+        return KeychainManager.shared.save(data, service: KeychainManager.pinService)
+    }
+
+    func pinAuthentication(_ pin: String) -> Bool {
+        guard let data = KeychainManager.shared.read(service: KeychainManager.pinService),
+              let storedPin = String(data: data, encoding: .utf8) else {
+            return false
+        }
+
+        return pin == storedPin
+    }
+
+    private func biometricAuth(completion: @escaping (Bool) -> ()) {
         let authContext = LAContext()
         var policyError: NSError?
 
@@ -21,12 +43,7 @@ class AuthenticationService {
 
         if authContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &policyError) {
             authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason, reply: { success, error in
-                if success {
-                    completion(true)
-                } else {
-                    completion(false)
-                }
-
+                    completion(success)
             })
         }
     }

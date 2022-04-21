@@ -64,6 +64,12 @@
 		DA8E4B0E201188DC00A81E67 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8E4B0D201188DC00A81E67 /* DateFormatterExtension.swift */; };
 		DAA9E929280F46A7007A4292 /* PinInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9E928280F46A7007A4292 /* PinInputView.swift */; };
 		DAA9E92B28104A19007A4292 /* UserDefaults+UserConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9E92A28104A19007A4292 /* UserDefaults+UserConfiguration.swift */; };
+		DAA9E92D2811CD13007A4292 /* GuardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9E92C2811CD13007A4292 /* GuardViewModel.swift */; };
+		DAA9E92F2811D676007A4292 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9E92E2811D676007A4292 /* SettingsViewModel.swift */; };
+		DAA9E9322811DC67007A4292 /* PinRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9E9312811DC67007A4292 /* PinRegistrationViewController.swift */; };
+		DAA9E9342811DC99007A4292 /* PinRegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9E9332811DC99007A4292 /* PinRegistrationRouter.swift */; };
+		DAA9E9362811DCA6007A4292 /* PinRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9E9352811DCA6007A4292 /* PinRegistrationViewModel.swift */; };
+		DAA9E93828120135007A4292 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9E93728120135007A4292 /* KeychainManager.swift */; };
 		DAEB350E280EEE2D00D369AE /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = DAEB350D280EEE2D00D369AE /* Nuke */; };
 		DAEB3510280EFEEF00D369AE /* NavigationController+Appearence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB350F280EFEEF00D369AE /* NavigationController+Appearence.swift */; };
 		DAEB3517280F259200D369AE /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEB3516280F259200D369AE /* SettingsRouter.swift */; };
@@ -145,6 +151,12 @@
 		DA8E4B0D201188DC00A81E67 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		DAA9E928280F46A7007A4292 /* PinInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinInputView.swift; sourceTree = "<group>"; };
 		DAA9E92A28104A19007A4292 /* UserDefaults+UserConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+UserConfiguration.swift"; sourceTree = "<group>"; };
+		DAA9E92C2811CD13007A4292 /* GuardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardViewModel.swift; sourceTree = "<group>"; };
+		DAA9E92E2811D676007A4292 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		DAA9E9312811DC67007A4292 /* PinRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinRegistrationViewController.swift; sourceTree = "<group>"; };
+		DAA9E9332811DC99007A4292 /* PinRegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinRegistrationRouter.swift; sourceTree = "<group>"; };
+		DAA9E9352811DCA6007A4292 /* PinRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinRegistrationViewModel.swift; sourceTree = "<group>"; };
+		DAA9E93728120135007A4292 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		DAEB350F280EFEEF00D369AE /* NavigationController+Appearence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Appearence.swift"; sourceTree = "<group>"; };
 		DAEB3516280F259200D369AE /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		DAEB351A280F260200D369AE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -434,6 +446,7 @@
 		DA8E4B052011733400A81E67 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DAA9E9302811DC4D007A4292 /* PinRegistration */,
 				DAEB351C280F320800D369AE /* GuardScreen */,
 				DAEB3511280F255300D369AE /* Settings */,
 				DA4206052016B98000DD7487 /* MovieSearch */,
@@ -490,6 +503,16 @@
 			path = UpcomingMovies;
 			sourceTree = "<group>";
 		};
+		DAA9E9302811DC4D007A4292 /* PinRegistration */ = {
+			isa = PBXGroup;
+			children = (
+				DAA9E9312811DC67007A4292 /* PinRegistrationViewController.swift */,
+				DAA9E9332811DC99007A4292 /* PinRegistrationRouter.swift */,
+				DAA9E9352811DCA6007A4292 /* PinRegistrationViewModel.swift */,
+			);
+			path = PinRegistration;
+			sourceTree = "<group>";
+		};
 		DAEB3511280F255300D369AE /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +543,7 @@
 		DAEB3514280F257500D369AE /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				DAA9E92E2811D676007A4292 /* SettingsViewModel.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -537,6 +561,7 @@
 				DAEB351D280F321C00D369AE /* GuardRouter.swift */,
 				DAEB351F280F324300D369AE /* GuardViewController.swift */,
 				DAA9E928280F46A7007A4292 /* PinInputView.swift */,
+				DAA9E92C2811CD13007A4292 /* GuardViewModel.swift */,
 			);
 			path = GuardScreen;
 			sourceTree = "<group>";
@@ -545,6 +570,7 @@
 			isa = PBXGroup;
 			children = (
 				DAEB3522280F336400D369AE /* AuthenticationService.swift */,
+				DAA9E93728120135007A4292 /* KeychainManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -676,9 +702,11 @@
 				DA606310201405BE00DC2254 /* UICollectionViewCellExtension.swift in Sources */,
 				DA8E4AE32011715E00A81E67 /* AppDelegate.swift in Sources */,
 				DA60632520144B1100DC2254 /* UIVIewExtension.swift in Sources */,
+				DAA9E93828120135007A4292 /* KeychainManager.swift in Sources */,
 				DA4206042015A41800DD7487 /* Cache.swift in Sources */,
 				DAEB351B280F260200D369AE /* SettingsView.swift in Sources */,
 				DA4205F4201579D900DD7487 /* MovieDetailsHeaderTableCell.swift in Sources */,
+				DAA9E9322811DC67007A4292 /* PinRegistrationViewController.swift in Sources */,
 				DA60630A2014008000DC2254 /* UpcomingMoviesContract.swift in Sources */,
 				DA42060F2016BC3600DD7487 /* MovieSearchViewController.swift in Sources */,
 				DA4205F820157A0700DD7487 /* MovieDetailsBasicInfoTableCell.swift in Sources */,
@@ -692,14 +720,18 @@
 				DA60630E2014056400DC2254 /* CollectionViewExtension.swift in Sources */,
 				DA4205FC20157C4D00DD7487 /* TableViewExtension.swift in Sources */,
 				DAEB3517280F259200D369AE /* SettingsRouter.swift in Sources */,
+				DAA9E9342811DC99007A4292 /* PinRegistrationRouter.swift in Sources */,
 				DA8E4B0E201188DC00A81E67 /* DateFormatterExtension.swift in Sources */,
 				DA4205F6201579F500DD7487 /* MovieDetailsOverviewTableCell.swift in Sources */,
+				DAA9E92F2811D676007A4292 /* SettingsViewModel.swift in Sources */,
 				DAEB3523280F336400D369AE /* AuthenticationService.swift in Sources */,
 				DAEB3520280F324300D369AE /* GuardViewController.swift in Sources */,
 				DA4206022015974200DD7487 /* UIColorExtension.swift in Sources */,
+				DAA9E9362811DCA6007A4292 /* PinRegistrationViewModel.swift in Sources */,
 				DAEB351E280F321C00D369AE /* GuardRouter.swift in Sources */,
 				DA42060020157D2E00DD7487 /* MovieDetailsRouter.swift in Sources */,
 				DAA9E929280F46A7007A4292 /* PinInputView.swift in Sources */,
+				DAA9E92D2811CD13007A4292 /* GuardViewModel.swift in Sources */,
 				DA6062FD2013FFCC00DC2254 /* UpcomingMoviesViewController.swift in Sources */,
 				DA606316201406AC00DC2254 /* NibLoadableViewExtension.swift in Sources */,
 				DA60631820140B3C00DC2254 /* UIImageExtension.swift in Sources */,

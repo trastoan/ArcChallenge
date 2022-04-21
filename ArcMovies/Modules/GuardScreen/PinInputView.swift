@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PinInputViewDelegate: AnyObject {
-    func didFinishInput(pin: String)
+    func didFinishInput(_ inputView: PinInputView, pin: String)
 }
 
 class PinInputView: UIView {
@@ -39,7 +39,7 @@ class PinInputView: UIView {
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textAlignment = .center
         label.numberOfLines = 1
-        label.textColor = .systemBackground
+        label.textColor = .white
         return label
     }()
 
@@ -63,7 +63,18 @@ class PinInputView: UIView {
     }
 
     func beginUserInput() {
+        hiddenTextfield.text = ""
+        clearPins()
         hiddenTextfield.becomeFirstResponder()
+    }
+
+    func changeMessage(_ message: String) {
+        messageLabel.text = message
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        customizePinViews()
     }
 
     private func initPins(number: Int) {
@@ -81,15 +92,6 @@ class PinInputView: UIView {
         }
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        customizePinViews()
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     private func setupConstraints() {
         self.addSubview(hiddenTextfield)
         self.addSubview(contentStack)
@@ -105,9 +107,26 @@ class PinInputView: UIView {
         contentStack.centerOnSelf(view: self)
     }
 
+    private func customizePinViews() {
+        pinViews.forEach { pin in
+            pin.layer.cornerRadius = pin.frame.height/2
+            pin.backgroundColor = .clear
+            pin.layer.borderWidth = 1
+            pin.layer.borderColor = UIColor.white.cgColor
+        }
+    }
+
+    private func clearPins() {
+        pinViews.forEach {
+            $0.backgroundColor = .clear
+        }
+    }
+
+
     @objc
     private func changedText(textfield: UITextField) {
         let count = textfield.text?.count ?? 0
+
         for (index, pinView) in pinViews.enumerated() {
             if index < count {
                 pinView.backgroundColor = .white
@@ -117,16 +136,12 @@ class PinInputView: UIView {
         }
         if count == pinViews.count {
             textfield.resignFirstResponder()
-            delegate?.didFinishInput(pin: textfield.text!)
+            delegate?.didFinishInput(self, pin: textfield.text!)
         }
     }
 
-    private func customizePinViews() {
-        pinViews.forEach { pin in
-            pin.layer.cornerRadius = pin.frame.height/2
-            pin.backgroundColor = .clear
-            pin.layer.borderWidth = 1
-            pin.layer.borderColor = UIColor.white.cgColor
-        }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

@@ -1,25 +1,24 @@
 //
-//  GuardRouter.swift
+//  PinRegistrationRouter.swift
 //  ArcMovies
 //
-//  Created by Yuri on 19/04/22.
+//  Created by Yuri on 21/04/22.
 //  Copyright © 2022 YuriFrota. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class GuardRouter {
+class PinRegistrationRouter {
     var viewController: UIViewController?
 
     static func assembleModule() -> UIViewController {
-        let controller = GuardViewController()
-        let model = GuardViewModel()
-        let router = GuardRouter()
+        let controller = PinRegistrationViewController()
+        let model = PinRegistrationViewModel()
+        let router = PinRegistrationRouter()
 
-        controller.model = model
-        model.router = router
         router.viewController = controller
+        model.router = router
+        controller.model = model
 
         let nav = UINavigationController(rootViewController: controller)
         nav.modalPresentationStyle = .fullScreen

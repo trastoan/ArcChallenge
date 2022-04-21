@@ -10,22 +10,21 @@ import UIKit
 import SwiftUI
 
 class RootRouter: RootWireframe {
-    static func presentTabBarController(in window: UIWindow) {
+
+    static func presentEntryController(in window: UIWindow) {
         window.makeKeyAndVisible()
-        window.rootViewController = defineRootController()
+        window.rootViewController = ApplicationTabBarController()
+        presentGuardController(in: window)
     }
 
-    static func presentTabBarController() {
-        DispatchQueue.main.async {
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let window = appDelegate.window else {
+    static func presentGuardController(in window: UIWindow) {
+        if UserDefaults.authenticationEnabled {
+            guard let topController = window.rootViewController as? UITabBarController else {
                 return
             }
-            window.makeKeyAndVisible()
-            window.rootViewController = ApplicationTabBarController()
-        }
-    }
 
-    private static func defineRootController() -> UIViewController {
-        return UserDefaults.authenticationEnabled ? GuardRouter.assembleModule() : ApplicationTabBarController()
+            let nav = GuardRouter.assembleModule()
+            topController.selectedViewController?.present(nav, animated: true)
+        }
     }
 }

@@ -9,28 +9,28 @@
 import UIKit
 
 class GuardViewController: UIViewController {
-    static var isGuardEnabled = "authenticationEnabled"
-    static var isBiometricEnabled = "biometricsEnabled"
+    var model: GuardViewModel!
 
     let pinView = PinInputView(with: "Insert your pin", pinSize: 6)
 
     override func viewDidLoad() {
         self.view.backgroundColor = .navigationColor
+        title = "Insert Your pin"
         pinView.delegate = self
+
+        model.defaultAuthentication = { [weak self] in
+            self?.pinView.beginUserInput()
+        }
+        model.failedToAuthenticate = { [weak self] in
+            self?.authFailed()
+        }
+
         setupConstraints()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if UserDefaults.biometricsEnabled {
-            AuthenticationService.shared.askForAuthentication { success in
-                if success {
-                    RootRouter.presentTabBarController()
-                }
-            }
-        } else {
-            pinView.beginUserInput()
-        }
+        model.authenticateUser()
     }
 
     private func setupConstraints() {
@@ -43,17 +43,22 @@ class GuardViewController: UIViewController {
             pinView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
         ])
     }
+
+    private func authFailed() {
+        UIView.animate(withDuration: 1) {
+            self.view.backgroundColor = .systemRed
+            self.pinView.changeMessage("Wrong pin")
+        } completion: { _ in
+            self.view.backgroundColor = .navigationColor
+            self.pinView.beginUserInput()
+            self.pinView.changeMessage("Insert your pin")
+        }
+
+    }
 }
 
 extension GuardViewController: PinInputViewDelegate {
-    func didFinishInput(pin: String) {
-        print(pin)
-        if authenticated() {
-            RootRouter.presentTabBarController()
-        }
-    }
-
-    func authenticated() -> Bool {
-        return true
+    func didFinishInput(_ inputView: PinInputView, pin: String) {
+        model.pinAuthentication(passcode: pin)
     }
 }

@@ -9,28 +9,25 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage(UserDefaults.authenticationEnabledKey) private var toggleActive = false
-    @AppStorage(UserDefaults.biometricEnabledKey) private var biometricsEnabled = false
-    
+    @ObservedObject private var model: SettingsViewModel
+
+    init(with model: SettingsViewModel) {
+        self.model = model
+    }
+
     var body: some View {
         List {
             Section("Security") {
-                Toggle("Activate app protection", isOn: $toggleActive)
+                Toggle("Activate app protection", isOn: $model.guardEnabled)
                     .tint(Color(.navigationColor))
-                if toggleActive {
+                if model.guardEnabled {
                     Button {
-                        if !biometricsEnabled {
-                            AuthenticationService.shared.askForAuthentication { success in
-                                biometricsEnabled = success
-                            }
-                        } else {
-                            biometricsEnabled.toggle()
-                        }
+                        model.changeBiometricStatus()
                     } label: {
-                        Text("\(biometricsEnabled ? "Disable" : "Enable") Biometrics")
+                        Text("\(model.biometricsEnabled ? "Disable" : "Enable") Biometrics")
                     }
                     Button {
-                        //enter pin
+                        model.registerNewPin()
                     } label: {
                         Text("Change passcode")
                     }
@@ -40,8 +37,8 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
-}
+//struct SettingsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SettingsView()
+//    }
+//}
