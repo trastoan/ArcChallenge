@@ -34,6 +34,7 @@ class UpcomingMoviesViewController: UIViewController, UpcomingInterface {
     fileprivate func setupView() {
         collection.delegate = self
         collection.dataSource = self
+        collection.prefetchDataSource = self
 
         collection.register(MovieCollectionViewCell.self)
         collection.backgroundColor = .systemBackground
@@ -64,7 +65,7 @@ class UpcomingMoviesViewController: UIViewController, UpcomingInterface {
     }
 }
 
-extension UpcomingMoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension UpcomingMoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return moviesData.count
     }
@@ -74,17 +75,23 @@ extension UpcomingMoviesViewController: UICollectionViewDelegate, UICollectionVi
         
         return cell
     }
-    
+
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        let itemsPerFetch = 20
+        let newFetchTrigger = moviesData.count - itemsPerFetch
+        if let firstIndex = indexPaths.first?.row,
+           firstIndex >= newFetchTrigger {
+            currentPage += 1
+            presenter.updateView(page: currentPage)
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let cell = cell as? MovieCollectionViewCell else { return }
         let movie = moviesData[indexPath.row]
         cell.setup(movie)
         //Needs to use this function to check if the cell loading the image is the right cell
         cell.moviePosterImage.loadImage(withURL: TMDBProvider.posterURL(forPath: movie.poster, andSize: .w342))
-        if indexPath.row == moviesData.count - 4 && !didReachEnd {
-            currentPage += 1
-            presenter.updateView(page: currentPage)
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
