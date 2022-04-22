@@ -11,14 +11,21 @@ import UIKit
 class ApplicationTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupAppearence()
+
         let upcomingController = UpcomingMoviesRouter.assembleModule()
         let searchController = MovieSearchRouter.assembleModule()
         
-        upcomingController.tabBarItem = UITabBarItem(title: "Upcoming", image: #imageLiteral(resourceName: "upcomingTab"), tag: 1)
-        searchController.tabBarItem = UITabBarItem(title: "Search", image: #imageLiteral(resourceName: "searchIcon"), tag: 2)
+        upcomingController.tabBarItem = UITabBarItem(title: "Upcoming", image: UIImage(systemName: "calendar"), tag: 1)
+        searchController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 2)
         
         let tabBarControllers = [upcomingController, searchController]
         self.setViewControllers(tabBarControllers, animated: true)
+    }
+
+    func setupAppearence() {
+        tabBar.backgroundColor = .systemBackground
+        tabBar.barTintColor = .systemBackground
+        tabBar.tintColor = .navigationColor
     }
 }

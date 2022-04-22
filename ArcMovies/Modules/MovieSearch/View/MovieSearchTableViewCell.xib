@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="124"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oxj-8e-Mcc">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oxj-8e-Mcc" customClass="LoadableImageView" customModule="ArcMovies" customModuleProvider="target">
                         <rect key="frame" x="16" y="16" width="63.5" height="91"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Oxj-8e-Mcc" secondAttribute="height" multiplier="7:10" id="wPw-mi-EjC"/>

@@ -80,8 +80,7 @@ extension UpcomingMoviesViewController: UICollectionViewDelegate, UICollectionVi
         let movie = moviesData[indexPath.row]
         cell.setup(movie)
         //Needs to use this function to check if the cell loading the image is the right cell
-        cell.moviePosterImage.loadImageInCollectionCell(withURL: TMDBProvider.posterURL(forPath: movie.poster, andSize: .w342), collection: collectionView, indexPath: indexPath, cell: cell)
-        //Loads new data when there are only four cells to appear before end
+        cell.moviePosterImage.loadImage(withURL: TMDBProvider.posterURL(forPath: movie.poster, andSize: .w342))
         if indexPath.row == moviesData.count - 4 && !didReachEnd {
             currentPage += 1
             presenter.updateView(page: currentPage)

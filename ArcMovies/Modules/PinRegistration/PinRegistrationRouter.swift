@@ -22,6 +22,7 @@ class PinRegistrationRouter {
 
         let nav = UINavigationController(rootViewController: controller)
         nav.modalPresentationStyle = .fullScreen
+        nav.setAppearence(background: .navigationColor, tint: .white)
 
         return nav
     }

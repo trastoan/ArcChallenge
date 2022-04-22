@@ -17,9 +17,9 @@ extension UIView {
     
     //Center a view on a super view
     func centerOnSelf(view: UIView) {
-        view.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        view.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        view.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        view.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
+        view.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        view.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
 }

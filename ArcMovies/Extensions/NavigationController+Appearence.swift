@@ -13,6 +13,7 @@ extension UINavigationController {
         let appearence = UINavigationBarAppearance()
         appearence.configureWithOpaqueBackground()
         appearence.backgroundColor = background
+        appearence.shadowColor = .clear
         appearence.titleTextAttributes = [.foregroundColor : tint]
         appearence.largeTitleTextAttributes = [.foregroundColor : tint]
 

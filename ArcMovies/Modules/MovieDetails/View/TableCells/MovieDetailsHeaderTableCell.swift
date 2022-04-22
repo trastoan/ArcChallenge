@@ -9,8 +9,8 @@
 import UIKit
 
 class MovieDetailsHeaderTableCell: UITableViewCell {
-    @IBOutlet weak var backdropImageView: UIImageView!
-    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var backdropImageView: LoadableImageView!
+    @IBOutlet weak var posterImageView: LoadableImageView!
     @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var shadowView: UIView!
     

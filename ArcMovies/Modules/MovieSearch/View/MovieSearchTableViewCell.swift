@@ -10,7 +10,7 @@ import UIKit
 
 class MovieSearchTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var posterImageView: LoadableImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var genresLabel: UILabel!
     

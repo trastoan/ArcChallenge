@@ -40,7 +40,7 @@ class GuardViewController: UIViewController {
         NSLayoutConstraint.activate([
             pinView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 18),
             pinView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -18),
-            pinView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+            pinView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -80)
         ])
     }
 

@@ -18,7 +18,7 @@
                     <rect key="frame" x="8" y="8" width="144" height="204.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k2G-3y-Lyk">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k2G-3y-Lyk" customClass="LoadableImageView" customModule="ArcMovies" customModuleProvider="target">
                     <rect key="frame" x="8" y="8" width="144" height="204.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="k2G-3y-Lyk" secondAttribute="height" multiplier="74:105" id="wVg-BE-ycI"/>

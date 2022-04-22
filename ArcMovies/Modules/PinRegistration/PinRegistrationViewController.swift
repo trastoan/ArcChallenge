@@ -17,7 +17,7 @@ class PinRegistrationViewController: UIViewController {
         scroll.showsVerticalScrollIndicator = false
         scroll.showsHorizontalScrollIndicator = false
         scroll.isUserInteractionEnabled = false
-        scroll.backgroundColor = .navigationColor
+        scroll.backgroundColor = .clear
 
         return scroll
     }()
@@ -35,8 +35,10 @@ class PinRegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Pin Registration"
+        view.backgroundColor = .navigationColor
 
         setupCancelButton()
+        setupSubviews()
         setupConstraints()
         model.failedConfirmation = {
             self.wrongConfirmation()
@@ -48,7 +50,7 @@ class PinRegistrationViewController: UIViewController {
         pinView.beginUserInput()
     }
 
-    private func setupConstraints() {
+    private func setupSubviews() {
         self.view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(pinView)
@@ -56,25 +58,34 @@ class PinRegistrationViewController: UIViewController {
 
         pinView.translatesAutoresizingMaskIntoConstraints = false
         confirmationPinView.translatesAutoresizingMaskIntoConstraints = false
+    }
 
-        scrollView.centerOnSelf(view: self.view)
+    private func setupConstraints() {
+
+        let frameGuide = scrollView.frameLayoutGuide
+        let contentGuide = scrollView.contentLayoutGuide
 
         NSLayoutConstraint.activate([
-            contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 2),
+            frameGuide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            frameGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            frameGuide.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            frameGuide.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
 
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
-            contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+            contentGuide.heightAnchor.constraint(equalTo: frameGuide.heightAnchor),
+            contentView.widthAnchor.constraint(equalTo: frameGuide.widthAnchor, multiplier: 2),
+
+            contentView.topAnchor.constraint(equalTo: contentGuide.topAnchor),
+            contentView.bottomAnchor.constraint(equalTo: contentGuide.bottomAnchor),
+            contentView.leftAnchor.constraint(equalTo: contentGuide.leftAnchor),
+            contentView.rightAnchor.constraint(equalTo: contentGuide.rightAnchor),
 
             pinView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            pinView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -100),
+            pinView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -80),
             pinView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5),
 
             confirmationPinView.leadingAnchor.constraint(equalTo: pinView.trailingAnchor),
             confirmationPinView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            confirmationPinView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -100),
+            confirmationPinView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -80),
         ])
     }
 
@@ -88,10 +99,10 @@ class PinRegistrationViewController: UIViewController {
 
     private func wrongConfirmation() {
         UIView.animate(withDuration: 0.5) {
-            self.scrollView.backgroundColor = .systemRed
+            self.view.backgroundColor = .systemRed
             self.confirmationPinView.changeMessage("Pin doesn't match")
         } completion: { _ in
-            self.scrollView.backgroundColor = .navigationColor
+            self.view.backgroundColor = .navigationColor
             self.confirmationPinView.changeMessage("Repeat your pin")
             self.scrollToBegin()
         }

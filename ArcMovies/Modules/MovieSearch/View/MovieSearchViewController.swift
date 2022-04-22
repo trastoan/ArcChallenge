@@ -41,7 +41,7 @@ class MovieSearchViewController: UIViewController, SearchInterface {
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search for movies"
-        searchController.searchBar.searchTextField.backgroundColor = .white
+        searchController.searchBar.searchTextField.backgroundColor = .systemBackground
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black
 
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -88,7 +88,7 @@ extension MovieSearchViewController: UITableViewDataSource, UITableViewDelegate,
         guard let movieCell = cell as? MovieSearchTableViewCell else { return }
         let movie = moviesData[indexPath.row]
         //Needs to make sure that the image is being loaded on the correct cell
-        movieCell.posterImageView.loadImageInTableCell(withURL: TMDBProvider.posterURL(forPath: movie.poster, andSize: .w154), table: tableView, indexPath: indexPath, cell: cell)
+        movieCell.posterImageView.loadImage(withURL: TMDBProvider.posterURL(forPath: movie.poster, andSize: .w154))
         
         movieCell.setup(with: moviesData[indexPath.row])
     }
