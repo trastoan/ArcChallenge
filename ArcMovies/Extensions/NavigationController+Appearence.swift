@@ -21,4 +21,14 @@ extension UINavigationController {
         navigationBar.tintColor = tint
         navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
     }
+
+    func setTitleColor(_ color: UIColor) {
+        let appearence = UINavigationBarAppearance()
+        appearence.configureWithTransparentBackground()
+        appearence.titleTextAttributes = [.foregroundColor : color]
+        appearence.largeTitleTextAttributes = [.foregroundColor : color]
+
+        navigationBar.standardAppearance = appearence
+        navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
+    }
 }
