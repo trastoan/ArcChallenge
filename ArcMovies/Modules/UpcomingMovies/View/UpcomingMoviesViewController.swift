@@ -36,7 +36,7 @@ class UpcomingMoviesViewController: UIViewController, UpcomingInterface {
         collection.dataSource = self
         collection.prefetchDataSource = self
 
-        collection.register(MovieCollectionViewCell.self)
+        collection.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: MovieCollectionViewCell.reuseIdentifier)
         collection.backgroundColor = .systemBackground
         if #available(iOS 11.0, *) {
             collection.contentInsetAdjustmentBehavior = .always
@@ -72,7 +72,6 @@ extension UpcomingMoviesViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MovieCollectionViewCell
-        
         return cell
     }
 
@@ -90,7 +89,6 @@ extension UpcomingMoviesViewController: UICollectionViewDelegate, UICollectionVi
         guard let cell = cell as? MovieCollectionViewCell else { return }
         let movie = moviesData[indexPath.row]
         cell.setup(movie)
-        //Needs to use this function to check if the cell loading the image is the right cell
         cell.moviePosterImage.loadImage(withURL: TMDBProvider.posterURL(forPath: movie.poster, andSize: .w342))
     }
     

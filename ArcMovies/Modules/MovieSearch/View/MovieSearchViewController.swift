@@ -31,7 +31,7 @@ class MovieSearchViewController: UIViewController, SearchInterface {
         table.tableFooterView = UIView()
         table.rowHeight = 124
         
-        table.register(MovieSearchTableViewCell.self)
+        table.register(MovieSearchTableViewCell.self, forCellReuseIdentifier: MovieSearchTableViewCell.reuseIdentifier)
         
         navigationItem.title = "Search Movies"
         self.preferLargeTitles()

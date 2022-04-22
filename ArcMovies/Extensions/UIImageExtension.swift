@@ -18,6 +18,11 @@ class LoadableImageView: UIImageView {
         loadingIndicator.setupOn(view: self)
     }
 
+    init() {
+        super.init(frame: .zero)
+        loadingIndicator.setupOn(view: self)
+    }
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadingIndicator.setupOn(view: self)

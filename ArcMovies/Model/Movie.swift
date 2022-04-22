@@ -34,7 +34,16 @@ struct Movie: Decodable {
         case genres = "genre_ids"
         case poster = "poster_path"
     }
-    
+
+    @MainActor
+    func getGenres() async -> String {
+        await withCheckedContinuation({ continuation in
+            getGenres { genres in
+                continuation.resume(returning: genres)
+            }
+        })
+    }
+
     func getGenres(completion: @escaping (String) -> Void){
         guard let genresIds = genres else {
             completion("")

@@ -10,6 +10,7 @@ import UIKit
 
 extension UIView {
     func dropShadow(withOpacity opacity: Float = 0.2, radius: CGFloat = 3) {
+        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
         self.layer.shadowOpacity = opacity
         self.layer.shadowOffset = CGSize(width: 3, height: 4)
         self.layer.shadowRadius = radius
